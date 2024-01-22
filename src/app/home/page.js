@@ -1,7 +1,8 @@
 export default function Home() {
   return (
     <div>
-      <h1> Default Next app</h1>
+      <h1>Homepage</h1>
+      <p>There is no place like home.</p>
     </div>
   );
 }
