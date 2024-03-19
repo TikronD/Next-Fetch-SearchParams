@@ -1,13 +1,13 @@
 import "./globals.css";
 import Link from "next/link";
-// import Header from "@/components/Header";
-// import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {/* <Header /> */}
+        <Header />
         <h1>Next with Fetch & searchParams</h1>
         <h4>Some links below</h4>
         <nav>
@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
           <Link href="/dance">Dance</Link>
         </nav>
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

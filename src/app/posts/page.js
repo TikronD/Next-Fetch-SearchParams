@@ -4,9 +4,9 @@ export default async function PostsPage({ searchParams }) {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
   let posts = await response.json();
 
-  // search specific user posts: http://localhost:3000/posts?user=10
+  // search specific user posts e.g user puts 10 in: http://localhost:3002/posts?user=10
   if (searchParams.user) {
-    posts = posts.filter((post) => post.userID == searchParams.user);
+    posts = posts.filter((post) => post.userId == searchParams.user);
   }
 
   if (searchParams.sort) {
@@ -16,6 +16,8 @@ export default async function PostsPage({ searchParams }) {
   return (
     <div>
       <h2>My Posts</h2>
+      <Link href="/posts">Sort A-Z</Link>
+      <Link href="/posts?sort=asc">Sort Z-A</Link>
       {posts.map((post) => {
         return (
           <div key={post.id}>
